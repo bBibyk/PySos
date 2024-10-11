@@ -1,0 +1,11 @@
+ITERATION 1:
+    - Conception 
+    - Architecture générale
+    - Classe Personne
+    - Méthodes : 
+        - Ajout des noeuds 
+        - Supression des noeuds
+        - Ajout des relations
+        - Supression des relations
+
+ITERATION 2

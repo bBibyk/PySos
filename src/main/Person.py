@@ -3,8 +3,8 @@ class Person:
         self.__first_name__ = first_name
         self.__last_name__ = last_name
         self.__age__ = age
-        self.__influence__ = []
-        self.__folow__ = []
+        self.__influenced__ = []
+        self.__followed__ = []
     
     def celebrate_birthday(self):
         self.__age__ += 1
@@ -21,3 +21,11 @@ class Person:
     def get_last_name(self):
         return self.__last_name__
     
+    def get_influenced(self):
+        return self.__influenced__.copy()
+    
+    def get_followed(self):
+        return self.__followed__.copy()
+    
+    def follow(self, someone : Person):
+        self.__followed__.append(someone)

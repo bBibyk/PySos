@@ -1,4 +1,6 @@
 digraph G {
-    Hello->World [dir="both"]
-    Salam->Hello
+    concentrate=true
+    Hello->World
+    World->Hello
+
     }

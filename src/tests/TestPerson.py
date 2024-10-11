@@ -1,6 +1,8 @@
 print("Test pysos")
 import unittest
 
+from PySos.src.main import Person
+
 class TestPerson(unittest.TestCase):
 
     def test_celebrate_birtday(self):
@@ -11,7 +13,6 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(john.__age__, 31)
 
     def test_person_follow(self):
-        =
         john = Person(first_name=["John"], last_name="Doe", age=30)
         jane = Person(first_name=["Jane"], last_name="Smith", age=25)
         

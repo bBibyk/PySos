@@ -32,6 +32,7 @@ class Person:
 
     def influence(self, someone : 'Person'):
         self.__influenced.append(someone)
+       
 
     def stop_following(self, someone : 'Person'):
         self.__followed.remove(someone)

@@ -1,24 +1,31 @@
-print("Test pysos")
-import unittest
+print("Test Person")
+import unittest 
+import sys
+import os
 
-from PySos.src.main import Person
+# Ajouter dynamiquement le chemin vers le répertoire 'src/main'
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'main')))
 
+from Person import Person
 class TestPerson(unittest.TestCase):
 
-    def test_celebrate_birtday(self):
+    def test_celebrate_birthday(self):
         john = Person(first_name=["John", "Michael"], last_name="Doe", age=30)
         john.celebrate_birthday()
 
-        #Test
-        self.assertEqual(john.__age__, 31)
+        self.assertEqual(john.get_age(), 31)
 
     def test_person_follow(self):
         john = Person(first_name=["John"], last_name="Doe", age=30)
         jane = Person(first_name=["Jane"], last_name="Smith", age=25)
         
         john.follow(jane)
+        followed = john.get_followed()
         
-        #Tests
-        self.assertIn(jane, john.__follow__) #Verifying if jane appears in john's followed list 
-        self.assertEqual(len(john.__follow__), 1) 
-        self.assertEqual(john.__follow__[0].__first_name__, ["Jane"]) 
+        # Verifying if jane exists in john's followed list
+        self.assertIn(jane, followed)
+        self.assertEqual(len(followed), 1)
+        self.assertEqual(followed[0].get_first_name(), ["Jane"])
+
+if __name__ == '__main__':
+    unittest.main()

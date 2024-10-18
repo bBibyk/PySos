@@ -1,4 +1,6 @@
 import Person
+import json
+import os
 
 class UserInterface:
     def __init__(self):
@@ -21,7 +23,7 @@ class UserInterface:
             if p.get_first_name()[0]==name:
                 return p
 
-    def create_link_(self):
+    def create_link(self):
         name1 = str(input("Main name of the follower: "))
         name2 = str(input("Main name of the influencer: "))
         p1 = self.__find_person(name1)
@@ -36,3 +38,28 @@ class UserInterface:
         p2 = self.__find_person(name2)
         p1.stop_following(p2)
         p2.stop_influencing(p1)
+
+    def save(self):
+        with open(os.path.abspath(__file__)[:-25] + "data.json", "w") as file:
+            json.dump(self.__people_pull, file, cls=Person.PersonEncoder, indent=4)
+
+    def load(self):
+        with open(os.path.abspath(__file__)[:-25] + "data.json", "r") as file:
+            loaded = json.load(file, cls=Person.PersonDecoder)
+        self.__people_pull.extend(loaded)
+    
+    def __str__(self):
+        return str(self.__people_pull)
+
+ui = UserInterface()
+# ui.create_person()
+# ui.create_person()
+# ui.create_link()
+# ui.save()
+ui.load()
+print(ui)
+ui.create_link()
+ui.save()
+# ui.create_person()
+# ui.create_link()
+# ui.save()

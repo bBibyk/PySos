@@ -1,0 +1,28 @@
+[
+    {
+        "_Person__first_name": [
+            "a"
+        ],
+        "_Person__last_name": "a",
+        "_Person__age": 1,
+        "_Person__influenced": [
+            "f-f-2"
+        ],
+        "_Person__followed": [
+            "f-f-2"
+        ]
+    },
+    {
+        "_Person__first_name": [
+            "f"
+        ],
+        "_Person__last_name": "f",
+        "_Person__age": 2,
+        "_Person__influenced": [
+            "a-a-1"
+        ],
+        "_Person__followed": [
+            "a-a-1"
+        ]
+    }
+]

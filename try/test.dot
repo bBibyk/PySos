@@ -1,6 +1,9 @@
 digraph G {
     concentrate=true
     Hello->World
+    Hi -> {Hello World}
     World->Hello
-
+    World -> Hi
+    Hi [shape=box]
+    World [shape=doublecircle]
     }

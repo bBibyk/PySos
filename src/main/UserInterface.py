@@ -48,18 +48,47 @@ class UserInterface:
             loaded = json.load(file, cls=Person.PersonDecoder)
         self.__people_pull.extend(loaded)
     
+    def __detect_leaders(self):
+        total = len(self.__people_pull)
+        leaders = []
+        for person in self.__people_pull:
+            score = person.influence_len() / total
+            if score >= 0.6:
+                leaders.append(person)
+        return leaders
+
+    def __detect_advisors(self, leader):
+        return leader.get_followed()
+
+    def make_diagram(self):
+        with open(os.path.abspath(__file__)[:-25] + "graph.dot", "w") as file:
+            file.write("digraph G {\n")
+            file.write("concentrate=true\n")
+            for leader in self.__detect_leaders():
+                file.write(leader.get_main_name() + "[shape=doublecircle]\n")
+                for advisor in self.__detect_advisors(leader):
+                    file.write(advisor.split("-")[0].split("/")[0] + "[shape=box]\n")
+            for person in self.__people_pull:
+                for follower in person.get_influenced():
+                    file.write(follower.split("-")[0].split("/")[0] + " -> " + person.get_main_name() + "\n")
+            file.write("}\n")
+
     def __str__(self):
         return str(self.__people_pull)
 
 ui = UserInterface()
 # ui.create_person()
 # ui.create_person()
+# ui.create_person()
+# ui.create_person()
+# ui.create_link()
+# ui.create_link()
+# ui.create_link()
 # ui.create_link()
 # ui.save()
 ui.load()
 print(ui)
-ui.create_link()
-ui.save()
+ui.make_diagram()
 # ui.create_person()
 # ui.create_link()
 # ui.save()

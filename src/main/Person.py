@@ -37,14 +37,12 @@ class Person:
             self.__followed.append(string_person)
 
     def influence(self, someone : 'Person'):
-<<<<<<< Updated upstream
-        self.__influenced.append(someone)
-       
-=======
         string_person = str(someone)
         if string_person not in self.__influenced:
             self.__influenced.append(string_person)
->>>>>>> Stashed changes
+    
+    def influence_len(self):
+        return len(self.__influenced)
 
     def stop_following(self, someone : 'Person'):
         self.__followed.remove(str(someone))

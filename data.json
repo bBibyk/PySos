@@ -1,28 +1,53 @@
 [
     {
         "_Person__first_name": [
-            "a"
+            "Kelyan",
+            "Mbape"
         ],
-        "_Person__last_name": "a",
-        "_Person__age": 1,
-        "_Person__influenced": [
-            "f-f-2"
-        ],
+        "_Person__last_name": "Mbape",
+        "_Person__age": 20,
+        "_Person__influenced": [],
         "_Person__followed": [
-            "f-f-2"
+            "Bogdan-Bb-23"
         ]
     },
     {
         "_Person__first_name": [
-            "f"
+            "Hu"
         ],
-        "_Person__last_name": "f",
-        "_Person__age": 2,
+        "_Person__last_name": "Gues",
+        "_Person__age": 21,
+        "_Person__influenced": [],
+        "_Person__followed": [
+            "Bogdan-Bb-23"
+        ]
+    },
+    {
+        "_Person__first_name": [
+            "Eylul"
+        ],
+        "_Person__last_name": "Alptekin",
+        "_Person__age": 23,
         "_Person__influenced": [
-            "a-a-1"
+            "Bogdan-Bb-23"
         ],
         "_Person__followed": [
-            "a-a-1"
+            "Bogdan-Bb-23"
+        ]
+    },
+    {
+        "_Person__first_name": [
+            "Bogdan"
+        ],
+        "_Person__last_name": "Bb",
+        "_Person__age": 23,
+        "_Person__influenced": [
+            "Kelyan/Mbape-Mbape-20",
+            "Hu-Gues-21",
+            "Eylul-Alptekin-23"
+        ],
+        "_Person__followed": [
+            "Eylul-Alptekin-23"
         ]
     }
 ]

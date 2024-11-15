@@ -1,0 +1,9 @@
+digraph G {
+concentrate=true
+Bogdan[shape=doublecircle]
+Eylul[shape=box]
+Bogdan -> Eylul
+Kelyan -> Bogdan
+Hu -> Bogdan
+Eylul -> Bogdan
+}

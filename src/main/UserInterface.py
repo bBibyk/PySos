@@ -74,21 +74,24 @@ class UserInterface:
             file.write("}\n")
 
     def __str__(self):
-        return str(self.__people_pull)
+        s = ""
+        for person in self.__people_pull:
+            s += str(person) + ", "
+        return s[:-2]
 
-ui = UserInterface()
-# ui.create_person()
-# ui.create_person()
-# ui.create_person()
-# ui.create_person()
-# ui.create_link()
-# ui.create_link()
-# ui.create_link()
-# ui.create_link()
-# ui.save()
-ui.load()
-print(ui)
-ui.make_diagram()
-# ui.create_person()
-# ui.create_link()
-# ui.save()
+# ui = UserInterface()
+# # ui.create_person()
+# # ui.create_person()
+# # ui.create_person()
+# # ui.create_person()
+# # ui.create_link()
+# # ui.create_link()
+# # ui.create_link()
+# # ui.create_link()
+# # ui.save()
+# ui.load()
+# print(ui)
+# ui.make_diagram()
+# # ui.create_person()
+# # ui.create_link()
+# # ui.save()

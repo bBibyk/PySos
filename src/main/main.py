@@ -3,12 +3,6 @@ from UserInterface import UserInterface
 
 def main():
     ui = UserInterface()
-    print("Chargement des données...")
-    try:
-        ui.load()
-        print("Données chargées avec succès !")
-    except FileNotFoundError:
-        print("Aucune donnée existante. Un nouveau fichier sera créé après sauvegarde.")
 
     while True:
         print("\n--- Menu ---")
@@ -19,6 +13,8 @@ def main():
         print("5. Afficher les personnes")
         print("6. Sauvegarder les données")
         print("7. Quitter")
+        print("8. Charger les données")
+        print("9. Produire diagramme")
         choix = input("Votre choix : ")
 
         if choix == "1":
@@ -35,10 +31,14 @@ def main():
             ui.save()
             print("Données sauvegardées avec succès !")
         elif choix == "7":
-            print("Sauvegarde des données avant de quitter...")
-            ui.save()
-            print("Au revoir !")
+            print("Au revoir...")
             break
+        elif choix == "8":
+            ui.load()
+            print("Chargement des données...")
+        elif choix == "9":
+            ui.make_diagram()
+            print("Le diagramme a été produit.")
         else:
             print("Choix invalide, veuillez réessayer.")
 
